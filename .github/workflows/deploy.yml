@@ -29,9 +29,9 @@ jobs:
       - name: build
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
-          VITE_SECRET: '\$2a\$10\$Ex9s3Q4ct213MzNR5heH3.72m1JJAc5dP.lA7h5QDyWphSo8Uijh.'
         run: |
           npm run build
+          echo "${{ secrets.ENV_FILE }}" > .env
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v2
