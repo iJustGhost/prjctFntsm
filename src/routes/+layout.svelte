@@ -1,10 +1,9 @@
-<script lang="ts">
-	import '../app.css';
-</script>
-
 <slot />
 
 <style>
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
 	:root {
 		@apply bg-background text-foreground;
 	}

@@ -3,9 +3,11 @@
 	import { enterGate } from '$lib';
 	import image from '$lib/assets/ghostImage.png';
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 
 	let showDialogue = false;
 	let Key: string;
+	
 
 	const setDialogue = () => {
 		showDialogue = !showDialogue;
@@ -13,14 +15,14 @@
 	const handleEnter = () => {
 		localStorage.setItem('current', Key);
 		if (enterGate()) {
-			goto('/main');
+			goto(base + '/main');
 		}
 	};
 	const textSubmit = (event: any) => {
 		if (event.key === 'Enter') {
 			localStorage.setItem('current', Key);
 			if (enterGate()) {
-				goto('/main');
+				goto(base + '/main');
 			}
 		}
 	};
@@ -29,7 +31,7 @@
 			localStorage.setItem('current', '');
 		} else {
 			if (enterGate()) {
-				goto('/main');
+				goto(base + '/main');
 			}
 		}
 	});

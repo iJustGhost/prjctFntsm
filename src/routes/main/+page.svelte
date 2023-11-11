@@ -2,17 +2,18 @@
 	import { goto } from '$app/navigation';
 	import { enterGate } from '$lib';
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 
 	onMount(() => {
-        if (!enterGate()) {
-			goto('/');
+		if (!enterGate()) {
+			goto(base + '/');
 		}
-    })
+	});
 
-    function logout() {
-        localStorage.clear()
-        goto('/')
-    }
+	function logout() {
+		localStorage.clear();
+		goto(base + '/');
+	}
 </script>
 
 <p>main</p>
