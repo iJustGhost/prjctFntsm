@@ -5,6 +5,6 @@
 	@tailwind components;
 	@tailwind utilities;
 	:root {
-		@apply bg-background text-foreground;
+		@apply bg-background text-foreground overflow-auto;
 	}
 </style>
